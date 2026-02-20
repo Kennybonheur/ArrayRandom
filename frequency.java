@@ -72,12 +72,29 @@ public class frequency {
         int totalCount = numbers.length;
         int middleIndex = totalCount / 2;
         if (middleIndex % 2 == 0){
-            return (double) (numbers[middleIndex - 1] + numbers[middleIndex]) / 2;
+            return (double) (numbers[middleIndex] + numbers[middleIndex+ 1]) / 2;
         } else {
             return numbers[middleIndex];
         }
-    }  
-    
+    } 
+
+    // for finding the highest frequency value in the array using the frequency map 
+    public static void highest_frequency(int[] numbers){
+        LinkedHashMap<Integer,Integer> map = countFrequency(numbers);
+
+        int maxkey = 0;
+        int maxvalue = 0; 
+
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()){ 
+            if (entry.getValue() > maxvalue){
+                maxvalue = entry.getValue();
+                maxkey = entry.getKey();
+            }
+        }
+
+        System.out.println("\nHighest frequency:");
+        System.out.println(maxkey + " = " + maxvalue);
+    }
     // Here we display what we have written above 😀some calculations.
     public static void main(String[] args) {
         int[] numbers = generate(1, 20, 30);
@@ -95,5 +112,8 @@ public class frequency {
         System.out.print("\nthe standard deviation is: " + calculate_std(numbers));
         System.out.print("\nthe variance: " + calculate_variance(numbers));
         System.out.print("\nthe median value is: " + calculate_median(numbers));
+
+        highest_frequency(numbers);
+
     }
 }
