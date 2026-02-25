@@ -72,7 +72,7 @@ public class frequency {
         int totalCount = numbers.length;
         int middleIndex = totalCount / 2;
         if (middleIndex % 2 == 0){
-            return (double) (numbers[middleIndex] + numbers[middleIndex+ 1]) / 2;
+            return (double) (numbers[middleIndex] + numbers[middleIndex + 1]) / 2;
         } else {
             return numbers[middleIndex];
         }
