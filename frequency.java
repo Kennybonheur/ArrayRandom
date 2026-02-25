@@ -92,8 +92,7 @@ public class frequency {
             }
         }
 
-        System.out.println("\nHighest frequency:");
-        System.out.println(maxkey + " = " + maxvalue);
+        System.out.println("\nHighest frequency:"  +maxkey+" = "+maxvalue);
     }
     // Here we display what we have written above 😀some calculations.
     public static void main(String[] args) {
